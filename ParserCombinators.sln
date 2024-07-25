@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParserCombinators.Model", "ParserCombinators.Model\ParserCombinators.Model.fsproj", "{9C3CECEC-FB81-4EEF-9D12-941A1790EC0F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParserCombinators.Model.Tests", "ParserCombinators.Model.Tests\ParserCombinators.Model.Tests.fsproj", "{15BC1197-6965-4800-90BD-0DC3804EA1DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserCombinators.Server", "ParserCombinators.Server\ParserCombinators.Server.csproj", "{2550B6B1-43E4-450C-95BB-B8256BAE4791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserCombinators.Frontend", "ParserCombinators.Frontend\ParserCombinators.Frontend.csproj", "{F1FAD91B-5591-45FC-BDF6-7D7EC66DB1EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C3CECEC-FB81-4EEF-9D12-941A1790EC0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3CECEC-FB81-4EEF-9D12-941A1790EC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3CECEC-FB81-4EEF-9D12-941A1790EC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3CECEC-FB81-4EEF-9D12-941A1790EC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15BC1197-6965-4800-90BD-0DC3804EA1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15BC1197-6965-4800-90BD-0DC3804EA1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15BC1197-6965-4800-90BD-0DC3804EA1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15BC1197-6965-4800-90BD-0DC3804EA1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2550B6B1-43E4-450C-95BB-B8256BAE4791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2550B6B1-43E4-450C-95BB-B8256BAE4791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2550B6B1-43E4-450C-95BB-B8256BAE4791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2550B6B1-43E4-450C-95BB-B8256BAE4791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1FAD91B-5591-45FC-BDF6-7D7EC66DB1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FAD91B-5591-45FC-BDF6-7D7EC66DB1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FAD91B-5591-45FC-BDF6-7D7EC66DB1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FAD91B-5591-45FC-BDF6-7D7EC66DB1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

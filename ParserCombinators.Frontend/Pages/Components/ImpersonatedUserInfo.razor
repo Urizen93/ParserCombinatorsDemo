@@ -1,0 +1,35 @@
+﻿@using System.Reactive.Disposables
+@using DynamicData.Binding
+@implements IDisposable
+
+<MudText class="@Class">
+    @DisplayText
+</MudText>
+
+@code {
+    private readonly SerialDisposable _serial = new();
+
+    [Parameter, EditorRequired]
+    public required IHasSelectedUserViewModel ViewModel { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+    
+    private string DisplayText =>
+        ViewModel is { SelectedUser.User: var user }
+            ? $"Impersonating as {user.Name} of age {user.Age}" +
+              $"{(user.IsPremium ? "with Premium status" : "")}" +
+              $" with the following roles: {string.Join(", ", user.Roles)}"
+            : "Select a user to show their news feed";
+    
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        _serial.Disposable = ViewModel
+            .WhenValueChanged(x => x.SelectedUser)
+            .Subscribe(_ => StateHasChanged());
+    }
+
+    public void Dispose() => _serial.Dispose();
+}

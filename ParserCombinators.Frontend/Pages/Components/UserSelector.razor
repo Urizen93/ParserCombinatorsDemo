@@ -1,0 +1,57 @@
+﻿@inherits ObserverComponent<SingleSelectionUserViewModel>
+
+<!--suppress CssUnusedSymbol, CssUnresolvedCustomProperty -->
+<style>
+    .selected {
+        background-color: var(--mud-palette-primary) !important;
+    }
+
+    .selected > td {
+        color: white !important;
+    }
+    
+    .selected > td .mud-input {
+        color: white !important;
+    }
+</style>
+
+<MudTable
+    Items="@ViewModel.Users"
+    T="Selectable<UserViewModel>"
+    Hover="true"
+    Breakpoint="Breakpoint.Sm"
+    Loading="@ViewModel.IsLoading"
+    LoadingProgressColor="Color.Info"
+    RowClass="cursor-pointer"
+    Class="@Class"
+    OnRowClick="@(OnRowClick)"
+    RowClassFunc="@RowClassFunc">
+    <HeaderContent>
+        <MudTh>Name</MudTh>
+        <MudTh>Age</MudTh>
+        <MudTh>Premium status</MudTh>
+        <MudTh>Roles</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Name">@context.Value.User.Name</MudTd>
+        <MudTd DataLabel="Age">@context.Value.User.Age</MudTd>
+        <MudTd DataLabel="Premium status">@context.Value.User.IsPremium</MudTd>
+        <MudTd DataLabel="Roles">@String.Join(", ", context.Value.User.Roles)</MudTd>
+    </RowTemplate>
+</MudTable>
+
+@code {
+    [Parameter]
+    public string? Class { get; set; }
+
+    private void OnRowClick(TableRowClickEventArgs<Selectable<UserViewModel>> obj) => obj.Item?.Toggle();
+
+    private static string RowClassFunc(Selectable<UserViewModel> element, int _) =>
+        element.IsSelected ? "selected" : string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await ViewModel.Refresh();
+    }
+}

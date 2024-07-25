@@ -1,0 +1,7 @@
+﻿@inherits ObserverComponent<UserFilterViewModel>
+
+<MudTextField @bind-Value="@ViewModel.Input" Label="Filter" Variant="Variant.Text" Immediate="true" />
+
+<MudText Color="Color.Error" Style="white-space: pre-wrap; font-family: 'Lucida Console', monospace; min-height: 120px">
+    @ViewModel.Error
+</MudText>

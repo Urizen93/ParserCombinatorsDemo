@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageId>ParserCombinators.Model</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Helpers.fs" />
+        <Compile Include="Domain.fs" />
+        <Compile Include="IsPremiumCondition.fs" />
+        <Compile Include="IsPremiumConditionParser.fs" />
+        <Compile Include="AgeCondition.fs" />
+        <Compile Include="AgeConditionParser.fs" />
+        <Compile Include="RoleCondition.fs" />
+        <Compile Include="RoleConditionParser.fs" />
+        <Compile Include="NewsCondition.fs" />
+        <Compile Include="NewsFilterExpression.fs" />
+        <Compile Include="NewsFilterExpressionParser.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FParsec" Version="1.1.1" />
+      <PackageReference Include="FParsec-Pipes" Version="1.1.2" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+﻿@inherits ObserverComponent<NewsViewModel>
+
+<MudTable
+    Items="@ViewModel.News"
+    Hover="true"
+    Class="@Class"
+    Breakpoint="Breakpoint.Sm"
+    Loading="@ViewModel.IsLoading"
+    LoadingProgressColor="Color.Info">
+    <HeaderContent>
+        <MudTh Style="width: 50%">Text</MudTh>
+        <MudTh Style="width: 50%">Filter</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Text">@context.Text</MudTd>
+        <MudTd DataLabel="Filter">@context.Filter</MudTd>
+    </RowTemplate>
+</MudTable>
+
+@code
+{
+    [Parameter]
+    public string? Class { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await ViewModel.Refresh();
+    }
+}

@@ -1,0 +1,9 @@
+﻿@page "/"
+@page "/users"
+@inject UsersViewModel ViewModel
+
+<PageTitle>Users</PageTitle>
+
+<h2>Filterable users</h2>
+
+<UsersDisplay ViewModel="@ViewModel"/>
