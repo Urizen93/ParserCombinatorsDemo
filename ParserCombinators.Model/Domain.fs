@@ -11,3 +11,6 @@ type User = {
     Age : int
     Roles : string Set
 }
+
+// We'd like to allow to news to target specific groups of users, e.g.
+// Role = 'Manager'; Premium is true or Age >= 65; etc

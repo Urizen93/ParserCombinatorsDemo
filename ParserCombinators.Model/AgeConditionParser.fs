@@ -17,15 +17,24 @@ module AgeConditionParser =
     let private natural =
         // pint32 predictably parses any int32 value
         pint32
+        
         // |>> is your map function for parsers (LINQ's Select for C#)
-        // Some and None represent optional value,
-        // which is something you could call "a way to represent nullability"
+        // Some(x) and None represent optional value,
+        // which is something you might call "a way to represent nullability"
         |>> fun value -> if value >= 0 then Some value else None
-        // <!> is more general map, used here for options
-        // <|>% is a resolution operator, meaning that it returns value on it's right hand
-        // if value on the left is "null". It's similar to ?? (coalesce operator)
-        >>= fun maybeNatural -> preturn <!> maybeNatural <|>% fail "Must be a natural number"
-        // attempt backtracks a parser if it failed; here it's there for better error output only
+        
+        // >>= is a bind function (LINQ's SelectMany for C#)
+        >>= fun maybeNatural ->
+            // 'preturn' create a parser that always returns a value passed to it
+            preturn
+            // <!> is more general map operator, used here for options
+            <!> maybeNatural
+            // <|>% is a resolution operator, meaning that it returns value on it's right hand
+            // if value on the left is "null". It's similar to ?? (coalesce operator)
+            <|>% fail "Must be a natural number"
+        
+        // 'attempt' backtracks a parser if it failed;
+        // we use it here for better error output only
         |> attempt
     
     let ageCondition : Parser<AgeCondition, unit> =

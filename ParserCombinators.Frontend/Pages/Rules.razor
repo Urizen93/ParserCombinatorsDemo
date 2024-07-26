@@ -1,0 +1,52 @@
+@page "/"
+
+<style>
+    p {
+        font-size: 18px !important;
+        margin: 20px 70px !important;
+    }
+</style>
+
+<PageTitle>Workshop rules</PageTitle>
+
+<div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-top gap-4">
+        <MudCard Class="@_textCardClasses">
+            <MudText>
+                <b>Q&amp;A Session:</b> If you have questions, you can ask them during the Q&amp;A session after the presentation.<br>
+                Alternatively, you can use the "raise hand" button during the presentation,<br>
+                with the presenter answering at their discretion.
+            </MudText>
+        </MudCard>
+        <MudCard Class="@_textCardClasses">
+            <MudText>
+                <b>Feedback:</b> You can share your feedback after the session using a special form.<br>
+                We will provide a link to this form.
+            </MudText>
+        </MudCard>
+        <MudCard Class="@_textCardClasses">
+            <MudText>
+                <b>Detailed Questions:</b> If you have a detailed question that requires preparation,<br>
+                please write it down and send it in the chat.<br>
+                We will collect these questions, prepare answers, and share them after the session.
+            </MudText>
+        </MudCard>
+        <MudCard Class="@_textCardClasses">
+            <MudText>
+                <b>Timing:</b> We strive to stick to the schedule, but the session may end a bit earlier or later.<br>
+                If you need to leave early, feel free to say goodbye in the chat and leave the call.
+            </MudText>
+        </MudCard>
+        <MudCard Class="@_textCardClasses">
+            <MudText>
+                <b>Reporting:</b> Time spent on training is reported as non-working hours.<br>
+                Those who are available should report this time in the availability unit.
+            </MudText>
+        </MudCard>
+    </div>
+</div>
+
+@code
+{
+    private readonly string _textCardClasses = "d-flex flex-grow-1 flex-basis-0 flex-column";
+}

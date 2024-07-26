@@ -7,11 +7,11 @@ module IsPremiumConditionParser =
     // %ci parses case-insensitive string
     let private isPremiumKeyword = %ci "PREMIUM"
     
-    let private isKeyword = %ci "is"
+    let private isKeyword = %ci "IS"
     
-    // %[x, y, ...] attempts to apply each parser until any of them succeeds
+    // %[x, y, ...] attempts to apply each parser once until any of them succeeds
     let private boolean = %[
-        // >>% discards parsed values and returns it's right hand argument (Is true in that case)
+        // >>% discards parsed values and returns it's right hand argument
         %ci "true" >>% Is true
         %ci "false" >>% Is false
     ]

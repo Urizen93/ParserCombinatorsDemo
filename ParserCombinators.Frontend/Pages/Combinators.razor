@@ -1,0 +1,104 @@
+@page "/combinators"
+
+<style>
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    li {
+        margin: 10px 0;
+    }
+</style>
+
+<PageTitle>Parser combinators</PageTitle>
+
+<div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-top gap-4">
+        <h3>Parser Combinators</h3>
+    </div>
+    <MudExpansionPanels>
+        <MudExpansionPanel>
+            <TitleContent>
+                <h5>Language agnosticism</h5>
+            </TitleContent>
+            <ChildContent>
+                <div class="d-flex flex-column gap-3">
+                    <MudText>
+                        Parser combinators were born on paper quite some time ago,
+                        and then were implemented across different languages
+                    </MudText>
+                    <MudText>
+                        Once you understand the concept,
+                        you will be able to apply it to most of the modern languages:<br>
+                        function names and operators might differ but the pattern remains the same
+                    </MudText>
+                </div>
+            </ChildContent>
+        </MudExpansionPanel>
+        
+        <MudExpansionPanel>
+            <TitleContent>
+                <h5>Ease of maintenance</h5>
+            </TitleContent>
+            <ChildContent>
+                <ul>
+                    <li>
+                        <MudText>
+                            <b>Smooth learning curve:</b> you can start with a very limited API subset
+                            and still achieve the result
+                        </MudText>
+                    </li>
+                    <li>
+                        <MudText>
+                            <b>Statically typed building blocks</b> - if your language has static types, of course
+                        </MudText>
+                    </li>
+                    <li>
+                        <MudText>
+                            <b>Emergent complexity:</b> combine simple parser to parse complex types
+                        </MudText>
+                    </li>
+                    <li>
+                        <MudText>
+                            <b>Testability:</b> easy to cover with units test 
+                        </MudText>
+                    </li>
+                    <li>
+                        <MudText>
+                            <b>Amazing error descriptions:</b> implementations tend to provide very detailed error output
+                            (we are going to see some today)
+                        </MudText>
+                    </li>
+                </ul>
+            </ChildContent>
+        </MudExpansionPanel>
+
+        <MudExpansionPanel>
+            <TitleContent>
+                <h5>Performance</h5>
+            </TitleContent>
+            <ChildContent>
+                <div class="d-flex flex-column gap-3">
+                    <MudText>
+                        Depends on a particular library. Today, we gonna be looking at FParsec
+                    </MudText>
+                    <MudText>
+                        In general, a parser implemented in FParsec can get close to the performance
+                        of a hand‐optimized recursive‐descent parser written in C#.
+                        Due to the multi‐layered architecture of the FParsec API,
+                        you always have the option to fall back to the lower‐level API should
+                        a particular parser component implemented with the high‐level API turn out to be too slow
+                    </MudText>
+                    <MudText>
+                        Hence, if you choose FParsec for implementing your parsers,
+                        you don’t have to worry that performance will become a reason for switching away from FParsec
+                    </MudText>
+                </div>
+            </ChildContent>
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+</div>
+
+@code {
+    
+}

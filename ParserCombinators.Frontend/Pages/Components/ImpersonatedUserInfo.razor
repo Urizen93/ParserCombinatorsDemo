@@ -18,7 +18,7 @@
     private string DisplayText =>
         ViewModel is { SelectedUser.User: var user }
             ? $"Impersonating as {user.Name} of age {user.Age}" +
-              $"{(user.IsPremium ? "with Premium status" : "")}" +
+              $"{(user.IsPremium ? " with Premium status" : "")}" +
               $" with the following roles: {string.Join(", ", user.Roles)}"
             : "Select a user to show their news feed";
     
